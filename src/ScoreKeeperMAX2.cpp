@@ -99,6 +99,7 @@ void ScoreKeeperMAX2::Load(
 		m_iRoundTo = 5;
 		if (!GAMESTATE->IsCourseMode())
 		{
+			m_ComboBonusFactor[TNS_RIDICULOUS] = 55;
 			m_ComboBonusFactor[TNS_MARVELOUS] = 55;
 			m_ComboBonusFactor[TNS_PERFECT] = 55;
 			m_ComboBonusFactor[TNS_GREAT] = 33;
@@ -267,8 +268,9 @@ void ScoreKeeperMAX2::AddScore( TapNoteScore score )
 
 	switch( score )
 	{
+	case TNS_RIDICULOUS:
 	case TNS_MARVELOUS:	p = 10;		break;
-	case TNS_PERFECT:	p = GAMESTATE->ShowMarvelous()? 9:10; break;
+	case TNS_PERFECT:	p = GAMESTATE->ShowTapNoteScore(TNS_MARVELOUS)? 9:10; break;
 	case TNS_GREAT:		p = 5;		break;
 	default:			p = 0;		break;
 	}
@@ -347,13 +349,13 @@ void ScoreKeeperMAX2::HandleTapRowScore( TapNoteScore scoreOfLastTap, int iNumTa
 	// Update dance points.
 	if( !m_pPlayerStageStats->bFailed )
 		m_pPlayerStageStats->iActualDancePoints += TapNoteScoreToDancePoints( scoreOfLastTap );
-	m_pPlayerStageStats->iCurPossibleDancePoints += TapNoteScoreToDancePoints( TNS_MARVELOUS );
+	m_pPlayerStageStats->iCurPossibleDancePoints += TapNoteScoreToDancePoints( TNS_RIDICULOUS );
 	// update judged row totals
 	m_pPlayerStageStats->iTapNoteScores[scoreOfLastTap] += 1;
 
 	// increment the current total possible dance score
 
-	m_pPlayerStageStats->iCurPossibleDancePoints += TapNoteScoreToDancePoints( TNS_MARVELOUS );
+	m_pPlayerStageStats->iCurPossibleDancePoints += TapNoteScoreToDancePoints( TNS_RIDICULOUS );
 
 	//
 	// Regular combo
@@ -384,6 +386,7 @@ void ScoreKeeperMAX2::HandleTapRowScore( TapNoteScore scoreOfLastTap, int iNumTa
 	//
 	switch( scoreOfLastTap )
 	{
+	case TNS_RIDICULOUS:
 	case TNS_MARVELOUS:
 	case TNS_PERFECT:
 		m_iCurToastyCombo += iNumTapsInRow;
@@ -425,7 +428,7 @@ void ScoreKeeperMAX2::HandleHoldScore( HoldNoteScore holdScore, TapNoteScore tap
 	m_pPlayerStageStats->iCurPossibleDancePoints += HoldNoteScoreToDancePoints( HNS_OK );
 
 	if( holdScore == HNS_OK )
-		AddScore( TNS_MARVELOUS );
+		AddScore( TNS_RIDICULOUS );
 	else if ( holdScore == HNS_NG )
 		AddScore( TNS_GOOD ); // required for subtractive score display to work properly
 
@@ -448,7 +451,7 @@ int ScoreKeeperMAX2::GetPossibleDancePoints( const RadarValues& radars )
 	int NumHolds = int(radars[RADAR_NUM_HOLDS]); 
 	int NumRolls = int(radars[RADAR_NUM_ROLLS]); 
 	return 
-		NumTaps*TapNoteScoreToDancePoints(TNS_MARVELOUS, false)+
+		NumTaps*TapNoteScoreToDancePoints(TNS_RIDICULOUS, false)+
 		NumHolds*HoldNoteScoreToDancePoints(HNS_OK, false) +
 		NumRolls*HoldNoteScoreToDancePoints(HNS_OK, false);
 }
@@ -473,7 +476,7 @@ int ScoreKeeperMAX2::GetPossibleGradePoints( const RadarValues& radars )
 	int NumHolds = int(radars[RADAR_NUM_HOLDS]); 
 	int NumRolls = int(radars[RADAR_NUM_ROLLS]); 
 	return 
-		NumTaps*TapNoteScoreToGradePoints(TNS_MARVELOUS, false)+
+		NumTaps*TapNoteScoreToGradePoints(TNS_RIDICULOUS, false)+
 		NumHolds*HoldNoteScoreToGradePoints(HNS_OK, false) +
 		NumRolls*HoldNoteScoreToGradePoints(HNS_OK, false);
 }
@@ -510,22 +513,25 @@ int ScoreKeeperMAX2::HoldNoteScoreToGradePoints( HoldNoteScore hns ) const
 
 int ScoreKeeperMAX2::TapNoteScoreToDancePoints( TapNoteScore tns, bool bBeginner )
 {
-	if( !GAMESTATE->ShowMarvelous() && tns == TNS_MARVELOUS )
-		tns = TNS_PERFECT;
+	// TNS_MARVELOUS --> TNS_PERFECT, any other restricted window goes to TNS_MARVELOUS
+	// (this assumes that all hidden windows will be higher than MARVELOUS)
+	if( !GAMESTATE->ShowTapNoteScore(tns) )
+		tns = (tns == TNS_MARVELOUS) ? TNS_PERFECT : TNS_MARVELOUS;
 
 	/* This is used for Oni percentage displays.  Grading values are currently in
 	 * StageStats::GetGrade. */
 	int iWeight = 0;
 	switch( tns )
 	{
-	case TNS_NONE:		iWeight = 0;
-	case TNS_HIT_MINE:	iWeight = PREFSMAN->m_iPercentScoreWeightHitMine;	break;
-	case TNS_MISS:		iWeight = PREFSMAN->m_iPercentScoreWeightMiss;		break;
-	case TNS_BOO:		iWeight = PREFSMAN->m_iPercentScoreWeightBoo;		break;
-	case TNS_GOOD:		iWeight = PREFSMAN->m_iPercentScoreWeightGood;		break;
-	case TNS_GREAT:		iWeight = PREFSMAN->m_iPercentScoreWeightGreat;		break;
-	case TNS_PERFECT:	iWeight = PREFSMAN->m_iPercentScoreWeightPerfect;	break;
-	case TNS_MARVELOUS:	iWeight = PREFSMAN->m_iPercentScoreWeightMarvelous;	break;
+	case TNS_NONE:			iWeight = 0;
+	case TNS_HIT_MINE:		iWeight = PREFSMAN->m_iPercentScoreWeightHitMine;	break;
+	case TNS_MISS:			iWeight = PREFSMAN->m_iPercentScoreWeightMiss;		break;
+	case TNS_BOO:			iWeight = PREFSMAN->m_iPercentScoreWeightBoo;		break;
+	case TNS_GOOD:			iWeight = PREFSMAN->m_iPercentScoreWeightGood;		break;
+	case TNS_GREAT:			iWeight = PREFSMAN->m_iPercentScoreWeightGreat;		break;
+	case TNS_PERFECT:		iWeight = PREFSMAN->m_iPercentScoreWeightPerfect;	break;
+	case TNS_MARVELOUS:		iWeight = PREFSMAN->m_iPercentScoreWeightMarvelous;	break;
+	case TNS_RIDICULOUS:		iWeight = PREFSMAN->m_iPercentScoreWeightRidiculous;	break;
 	default: FAIL_M( ssprintf("%i", tns) );
 	}
 	if( bBeginner && PREFSMAN->m_bMercifulBeginner )
@@ -550,8 +556,9 @@ int ScoreKeeperMAX2::HoldNoteScoreToDancePoints( HoldNoteScore hns, bool bBeginn
 
 int ScoreKeeperMAX2::TapNoteScoreToGradePoints( TapNoteScore tns, bool bBeginner )
 {
-	if( !GAMESTATE->ShowMarvelous() && tns == TNS_MARVELOUS )
-		tns = TNS_PERFECT;
+	// this assumes that all hidden windows will be higher than MARVELOUS
+	if( !GAMESTATE->ShowTapNoteScore( tns ) )
+		tns = (tns == TNS_MARVELOUS) ? TNS_PERFECT : TNS_MARVELOUS;
 
 	/* This is used for Oni percentage displays.  Grading values are currently in
 	 * StageStats::GetGrade. */
@@ -559,14 +566,15 @@ int ScoreKeeperMAX2::TapNoteScoreToGradePoints( TapNoteScore tns, bool bBeginner
 	switch( tns )
 	{
 	case TNS_NONE:			iWeight = 0;
-	case TNS_AVOIDED_MINE:	iWeight = 0;
+	case TNS_AVOIDED_MINE:		iWeight = 0;
 	case TNS_HIT_MINE:		iWeight = PREFSMAN->m_iGradeWeightHitMine;	break;
 	case TNS_MISS:			iWeight = PREFSMAN->m_iGradeWeightMiss;		break;
 	case TNS_BOO:			iWeight = PREFSMAN->m_iGradeWeightBoo;		break;
 	case TNS_GOOD:			iWeight = PREFSMAN->m_iGradeWeightGood;		break;
 	case TNS_GREAT:			iWeight = PREFSMAN->m_iGradeWeightGreat;	break;
 	case TNS_PERFECT:		iWeight = PREFSMAN->m_iGradeWeightPerfect;	break;
-	case TNS_MARVELOUS:		iWeight = PREFSMAN->m_iGradeWeightMarvelous;break;
+	case TNS_MARVELOUS:		iWeight = PREFSMAN->m_iGradeWeightMarvelous;	break;
+	case TNS_RIDICULOUS:		iWeight = PREFSMAN->m_iGradeWeightRidiculous;	break;
 	default: FAIL_M( ssprintf("%i", tns) );
 	}
 	if( bBeginner && PREFSMAN->m_bMercifulBeginner )

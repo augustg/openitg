@@ -105,6 +105,7 @@ void LifeMeterBar::ChangeLife( TapNoteScore score )
 	case SongOptions::DRAIN_NORMAL:
 		switch( score )
 		{
+		case TNS_RIDICULOUS:	fDeltaLife = PREFSMAN->m_fLifeDeltaPercentChangeRidiculous;	break;
 		case TNS_MARVELOUS:	fDeltaLife = PREFSMAN->m_fLifeDeltaPercentChangeMarvelous;	break;
 		case TNS_PERFECT:	fDeltaLife = PREFSMAN->m_fLifeDeltaPercentChangePerfect;	break;
 		case TNS_GREAT:		fDeltaLife = PREFSMAN->m_fLifeDeltaPercentChangeGreat;		break;
@@ -121,6 +122,7 @@ void LifeMeterBar::ChangeLife( TapNoteScore score )
 	case SongOptions::DRAIN_NO_RECOVER:
 		switch( score )
 		{
+		case TNS_RIDICULOUS:
 		case TNS_MARVELOUS:	fDeltaLife = +0.000f;	break;
 		case TNS_PERFECT:	fDeltaLife = +0.000f;	break;
 		case TNS_GREAT:		fDeltaLife = +0.000f;	break;
@@ -135,6 +137,7 @@ void LifeMeterBar::ChangeLife( TapNoteScore score )
 	case SongOptions::DRAIN_SUDDEN_DEATH:
 		switch( score )
 		{
+		case TNS_RIDICULOUS:
 		case TNS_MARVELOUS:	fDeltaLife = +0;	break;
 		case TNS_PERFECT:	fDeltaLife = +0;	break;
 		case TNS_GREAT:		fDeltaLife = +0;	break;

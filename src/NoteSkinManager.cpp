@@ -5,6 +5,7 @@
 #include "arch/Dialog/Dialog.h"
 #include "PrefsManager.h"
 #include "Foreach.h"
+#include "RageLog.h"
 
 
 NoteSkinManager*	NOTESKIN = NULL;	// global object accessable from anywhere in the program
@@ -160,6 +161,10 @@ CString NoteSkinManager::GetMetric( const CString &sButtonName, const CString &s
 
 	CString sReturn;
 
+	// COMPAT: redirect Ridiculous to Marvelous unless there's a specific metric for it
+	if( sValue.find("Ridiculous") != 1 && !data.metrics.GetValue(sButtonName,sValue,sReturn) )
+		sValue.Replace( "Ridiculous", "Marvelous" );
+
 	if( data.metrics.GetValue( sButtonName, sValue, sReturn ) )
 		return sReturn;
 	if( !data.metrics.GetValue( "NoteDisplay", sValue, sReturn ) )
@@ -211,6 +216,16 @@ try_again:
 			 sPath = GetPathFromDirAndFile( *iter, sButtonName+" "+sElement );
 		 if( !sPath.empty() )
 			 break;	// done searching
+	}
+
+	// COMPAT: if we're looking for Ridiculous and it doesn't exist, try Marvelous
+	if( sPath.empty() && sElement.find("Ridiculous") != -1 )
+	{
+		CString sOldElement = sElement;
+		sElement.Replace( "Ridiculous", "Marvelous" );
+		LOG->Debug( "Didn't find \"%s %s\", trying \"%s %s\"",
+			sButtonName.c_str(), sOldElement.c_str(), sButtonName.c_str(), sElement.c_str() );
+		goto try_again;
 	}
 
 	if( sPath.empty() )
