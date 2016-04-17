@@ -1053,17 +1053,22 @@ void ScreenEvaluation::CommitScores(
 					vPdas.push_back( AWARD_FULL_COMBO_GREATS );
 				if( stageStats.m_player[p].SingleDigitsOfScore( TNS_GREAT ) )
 					vPdas.push_back( AWARD_SINGLE_DIGIT_GREATS );
+				if( stageStats.m_player[p].OneOfScore( TNS_GREAT ) )
+					vPdas.push_back( AWARD_ONE_GREAT );
 				if( stageStats.m_player[p].FullComboOfScore( TNS_PERFECT ) )
 					vPdas.push_back( AWARD_FULL_COMBO_PERFECTS );
 				if( stageStats.m_player[p].SingleDigitsOfScore( TNS_PERFECT ) )
 					vPdas.push_back( AWARD_SINGLE_DIGIT_PERFECTS );
-				if( stageStats.m_player[p].FullComboOfScore( TNS_MARVELOUS ) )
-					vPdas.push_back( AWARD_FULL_COMBO_MARVELOUSES );
-				
-				if( stageStats.m_player[p].OneOfScore( TNS_GREAT ) )
-					vPdas.push_back( AWARD_ONE_GREAT );
 				if( stageStats.m_player[p].OneOfScore( TNS_PERFECT ) )
 					vPdas.push_back( AWARD_ONE_PERFECT );
+				if( stageStats.m_player[p].FullComboOfScore( TNS_MARVELOUS ) )
+					vPdas.push_back( AWARD_FULL_COMBO_MARVELOUSES );
+				if( stageStats.m_player[p].SingleDigitsOfScore( TNS_MARVELOUS ) )
+					vPdas.push_back( AWARD_SINGLE_DIGIT_MARVELOUSES );
+				if( stageStats.m_player[p].OneOfScore( TNS_MARVELOUS ) )
+					vPdas.push_back( AWARD_ONE_MARVELOUS );
+				if( stageStats.m_player[p].FullComboOfScore( TNS_RIDICULOUS ) )
+					vPdas.push_back( AWARD_FULL_COMBO_RIDICULOUS );
 
 				float fPercentGreats = stageStats.m_player[p].GetPercentageOfTaps( TNS_GREAT );
 				if( fPercentGreats >= 0.8f )

@@ -34,6 +34,7 @@ void Combo::Load( PlayerState *pPlayerState, PlayerStageStats *pPlayerStageStats
 	FULL_COMBO_GREATS_COMMAND		.Load(m_sName,"FullComboGreatsCommand");
 	FULL_COMBO_PERFECTS_COMMAND		.Load(m_sName,"FullComboPerfectsCommand");
 	FULL_COMBO_MARVELOUSES_COMMAND	.Load(m_sName,"FullComboMarvelousesCommand");
+	FULL_COMBO_RIDICULOUS_COMMAND	.Load(m_sName,"FullComboRidiculousCommand");
 	FULL_COMBO_BROKEN_COMMAND		.Load(m_sName,"FullComboBrokenCommand");
 	MISS_COMBO_COMMAND				.Load(m_sName,"MissComboCommand");
 	SHOW_MISS_COMBO					.Load(m_sName,"ShowMissCombo");
@@ -185,7 +186,9 @@ void Combo::SetCombo( int iCombo, int iMisses, float fLastStepsSeconds )
 
 	if( bPastMidpoint )
 	{
-		if( m_pPlayerStageStats->FullComboOfScore(TNS_MARVELOUS) )
+		if( m_pPlayerStageStats->FullComboOfScore(TNS_RIDICULOUS) )
+			pToRun = &FULL_COMBO_RIDICULOUS_COMMAND;
+		else if( m_pPlayerStageStats->FullComboOfScore(TNS_MARVELOUS) )
 			pToRun = &FULL_COMBO_MARVELOUSES_COMMAND;
 		else if( m_pPlayerStageStats->FullComboOfScore(TNS_PERFECT) )
 			pToRun = &FULL_COMBO_PERFECTS_COMMAND;

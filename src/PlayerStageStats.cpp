@@ -453,7 +453,7 @@ int	PlayerStageStats::GetComboAtStartOfStage() const
 bool PlayerStageStats::FullComboOfScore( TapNoteScore tnsAllGreaterOrEqual ) const
 {
 	ASSERT( tnsAllGreaterOrEqual >= TNS_GREAT );
-	ASSERT( tnsAllGreaterOrEqual <= TNS_MARVELOUS );
+	ASSERT( tnsAllGreaterOrEqual <= MAX_TAP_NOTE_SCORE );
 
 	// If missed any holds, then it's not a full combo
 	if( iHoldNoteScores[HNS_NG] > 0 )
