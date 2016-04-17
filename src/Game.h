@@ -57,6 +57,7 @@ public:
 	CString ColToButtonName( int col ) const;	// looks up current style.  Yuck.
 
 	TapNoteScore MapTapNoteScore( TapNoteScore tns ) const;
+	TapNoteScore m_mapRidiculousTo;
 	TapNoteScore m_mapMarvelousTo;
 	TapNoteScore m_mapPerfectTo;
 	TapNoteScore m_mapGreatTo;

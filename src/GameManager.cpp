@@ -184,6 +184,7 @@ Game g_Games[NUM_GAMES] =
 				KEY_KP_C9,			// DANCE_BUTTON_UPRIGHT
 			},
 		},
+		TNS_RIDICULOUS,		// m_mapRidiculousTo
 		TNS_MARVELOUS,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo
@@ -271,6 +272,7 @@ Game g_Games[NUM_GAMES] =
 				KEY_KP_C3,  			// PUMP_BUTTON_DOWNRIGHT
 			},
 		},
+		TNS_RIDICULOUS,		// m_mapRidiculousTo
 		TNS_MARVELOUS,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo
@@ -364,6 +366,7 @@ Game g_Games[NUM_GAMES] =
 				NO_DEFAULT_KEY,  		// EZ2_BUTTON_HANDLRRIGHT
 			},
 		},
+		TNS_PERFECT,		// m_mapRidiculousTo
 		TNS_PERFECT,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_PERFECT,		// m_mapGreatTo
@@ -451,6 +454,7 @@ Game g_Games[NUM_GAMES] =
 				NO_DEFAULT_KEY,			// PARA_BUTTON_RIGHT
 			},
 		},
+		TNS_RIDICULOUS,		// m_mapRidiculousTo
 		TNS_MARVELOUS,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo
@@ -547,6 +551,7 @@ Game g_Games[NUM_GAMES] =
 				NO_DEFAULT_KEY,			// DS3DDX_BUTTON_HANDRIGHT
 			},
 		},
+		TNS_RIDICULOUS,		// m_mapRidiculousTo
 		TNS_MARVELOUS,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo
@@ -646,6 +651,7 @@ Game g_Games[NUM_GAMES] =
 				NO_DEFAULT_KEY,			// BEAT_BUTTON_SCRATCHDOWN
 			},
 		},
+		TNS_RIDICULOUS,		// m_mapRidiculousTo
 		TNS_MARVELOUS,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo
@@ -730,6 +736,7 @@ Game g_Games[NUM_GAMES] =
 				KEY_KP_C2,			// MANIAX_BUTTON_HANDLRRIGHT
 			},
 		},
+		TNS_RIDICULOUS,		// m_mapRidiculousTo
 		TNS_MARVELOUS,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo
@@ -829,6 +836,7 @@ Game g_Games[NUM_GAMES] =
 				KEY_KP_C3,			// TECHNO_BUTTON_DOWNRIGHT
 			},
 		},
+		TNS_RIDICULOUS,		// m_mapRidiculousTo
 		TNS_MARVELOUS,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo
@@ -928,6 +936,7 @@ Game g_Games[NUM_GAMES] =
 				NO_DEFAULT_KEY,			// POPN_BUTTON_RIGHT_WHITE
 			},
 		},
+		TNS_PERFECT,		// m_mapRidiculousTo
 		TNS_PERFECT,		// m_mapMarvelousTo
 		TNS_PERFECT,		// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo
@@ -1024,6 +1033,7 @@ Game g_Games[NUM_GAMES] =
 				NO_DEFAULT_KEY,		// LIGHTS_BUTTON_BASS_RIGHT
 			},
 		},
+		TNS_RIDICULOUS,		// m_mapRidiculousTo
 		TNS_MARVELOUS,	// m_mapMarvelousTo
 		TNS_PERFECT,	// m_mapPerfectTo
 		TNS_GREAT,		// m_mapGreatTo

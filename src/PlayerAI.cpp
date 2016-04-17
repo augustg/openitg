@@ -14,14 +14,15 @@ struct TapScoreDistribution
 	{
 		float fRand = randomf(0,1);
 		float fCumulativePercent = 0;
-		for( int i=0; i<=TNS_MARVELOUS; i++ )
+		FOREACH_TapNoteScore(tns)
 		{
+			int i = static_cast<int>(tns);
 			fCumulativePercent += fPercent[i];
 			if( fRand <= fCumulativePercent+1e-4 ) /* rounding error */
 				return (TapNoteScore)i;
 		}
 		ASSERT(0);	// the fCumulativePercents must sum to 1.0, so we should never get here!
-		return TNS_MARVELOUS;
+		return TNS_RIDICULOUS;
 	}
 
 };
@@ -49,12 +50,19 @@ void PlayerAI::InitFromDisk()
 		pNode->GetAttrValue( "GreatWeight", dist.fPercent[TNS_GREAT] );
 		pNode->GetAttrValue( "PerfectWeight", dist.fPercent[TNS_PERFECT] );
 		pNode->GetAttrValue( "MarvelousWeight", dist.fPercent[TNS_MARVELOUS] );
+		pNode->GetAttrValue( "RidiculousWeight", dist.fPercent[TNS_RIDICULOUS] );
 		
 		float fSum = 0;
-		for( int j=0; j<NUM_TAP_NOTE_SCORES; j++ )
+		FOREACH_TapNoteScore(tns)
+		{
+			int j = static_cast<int>(tns);
 			fSum += dist.fPercent[j];
-		for( int j=0; j<NUM_TAP_NOTE_SCORES; j++ )
+		}
+		FOREACH_TapNoteScore(tns)
+		{
+			int j = static_cast<int>(tns);
 			dist.fPercent[j] /= fSum;
+		}
 	}
 }
 
@@ -62,7 +70,7 @@ void PlayerAI::InitFromDisk()
 TapNoteScore PlayerAI::GetTapNoteScore( const PlayerState* pPlayerState )
 {
 	if( pPlayerState->m_PlayerController == PC_AUTOPLAY )
-		return TNS_MARVELOUS;
+		return TNS_RIDICULOUS;
 
 	int iCpuSkill = pPlayerState->m_iCpuSkill;
 
