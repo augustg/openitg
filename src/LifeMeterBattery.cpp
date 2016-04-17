@@ -83,6 +83,7 @@ void LifeMeterBattery::ChangeLife( TapNoteScore score )
 
 	switch( score )
 	{
+	case TNS_RIDICULOUS:
 	case TNS_MARVELOUS:
 	case TNS_PERFECT:
 	case TNS_GREAT:

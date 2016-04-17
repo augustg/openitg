@@ -88,6 +88,7 @@ void LifeMeterTime::ChangeLife( TapNoteScore tns )
 	float fMeterChange = 0;
 	switch( tns )
 	{
+	case TNS_RIDICULOUS:	fMeterChange = PREFSMAN->m_fTimeMeterSecondsChangeRidiculous;	break;
 	case TNS_MARVELOUS:	fMeterChange = PREFSMAN->m_fTimeMeterSecondsChangeMarvelous;	break;
 	case TNS_PERFECT:	fMeterChange = PREFSMAN->m_fTimeMeterSecondsChangePerfect;		break;
 	case TNS_GREAT:		fMeterChange = PREFSMAN->m_fTimeMeterSecondsChangeGreat;		break;

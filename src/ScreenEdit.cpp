@@ -1521,7 +1521,7 @@ void ScreenEdit::InputRecord( const DeviceInput& DeviceI, const InputEventType t
 				m_NoteDataRecord.SetTapNote( iCol, iHeadRow, TAP_EMPTY );
 
 			m_NoteDataRecord.SetTapNote(iCol, iRow, TAP_ORIGINAL_TAP);
-			m_NoteFieldRecord.Step( iCol, TNS_MARVELOUS );
+			m_NoteFieldRecord.Step( iCol, MAX_TAP_NOTE_SCORE );
 		}
 		break;
 	case IET_SLOW_REPEAT:

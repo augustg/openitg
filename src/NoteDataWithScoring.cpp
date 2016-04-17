@@ -171,7 +171,7 @@ TapNoteResult NoteDataWithScoring::LastTapNoteResult( const NoteData &in, unsign
  * taps have been hit), return TNS_NONE or TNS_MISS. */
 TapNoteScore NoteDataWithScoring::MinTapNoteScore( const NoteData &in, unsigned row )
 {
-	TapNoteScore score = TNS_MARVELOUS;
+	TapNoteScore score = MAX_TAP_NOTE_SCORE;
 	for( int t=0; t<in.GetNumTracks(); t++ )
 	{
 		/* Ignore mines, or the score will always be TNS_NONE. */
