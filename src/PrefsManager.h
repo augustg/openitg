@@ -169,9 +169,9 @@ public:
 	Preference<int>		m_iMusicWheelSwitchSpeed;
 	Preference<bool>	m_bEasterEggs;
 	Preference<bool>	m_bEasterEggs2;
-	enum UseWindow { WINDOW_NEVER, WINDOW_COURSES_ONLY, WINDOW_EVERYWHERE };
-	Preference<UseWindow>		m_MarvelousTiming;
-	Preference<UseWindow>		m_RidiculousTiming;
+	enum UseTimingWindow { TIMING_WINDOW_NEVER, TIMING_WINDOW_COURSES_ONLY, TIMING_WINDOW_EVERYWHERE };
+	Preference<UseTimingWindow>		m_MarvelousTiming;
+	Preference<UseTimingWindow>		m_RidiculousTiming;
 	Preference<bool>	m_bEventMode;
 	Preference<int>		m_iCoinsPerCredit;
 	Preference<int>		m_iSongsPerPlay;

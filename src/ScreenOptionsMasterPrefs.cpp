@@ -323,13 +323,13 @@ static void CustomsLoadTimeout( int &sel, bool ToSel, const ConfOption *pConfOpt
 
 static void RidiculousTiming( int &sel, bool ToSel, const ConfOption *pConfOption )
 {
-	const PrefsManager::UseWindow mapping[] = { PrefsManager::WINDOW_NEVER, PrefsManager::WINDOW_COURSES_ONLY, PrefsManager::WINDOW_EVERYWHERE };
+	const PrefsManager::UseTimingWindow mapping[] = { PrefsManager::TIMING_WINDOW_NEVER, PrefsManager::TIMING_WINDOW_COURSES_ONLY, PrefsManager::TIMING_WINDOW_EVERYWHERE };
 	MoveMap( sel, PREFSMAN->m_RidiculousTiming, ToSel, mapping, ARRAYLEN(mapping) );
 }
 
 static void MarvelousTiming( int &sel, bool ToSel, const ConfOption *pConfOption )
 {
-	const PrefsManager::UseWindow mapping[] = { PrefsManager::WINDOW_NEVER, PrefsManager::WINDOW_COURSES_ONLY, PrefsManager::WINDOW_EVERYWHERE };
+	const PrefsManager::UseTimingWindow mapping[] = { PrefsManager::TIMING_WINDOW_NEVER, PrefsManager::TIMING_WINDOW_COURSES_ONLY, PrefsManager::TIMING_WINDOW_EVERYWHERE };
 	MoveMap( sel, PREFSMAN->m_MarvelousTiming, ToSel, mapping, ARRAYLEN(mapping) );
 }
 

@@ -970,7 +970,7 @@ void Player::HandleStep( int col, const RageTimer &tm, bool bHeld )
 		case PC_AUTOPLAY:
 			score = PlayerAI::GetTapNoteScore( m_pPlayerState );
 
-			// GetTapNoteScore always returns TNS_MARVELOUS in autoplay.
+			// GetTapNoteScore always returns TNS_RIDICULOUS in autoplay.
 			// If the step is far away, don't judge it.
 
 			if( fSecondsFromPerfect > ADJUSTED_WINDOW_TAP(TW_Boo) )
