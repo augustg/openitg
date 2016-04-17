@@ -349,13 +349,13 @@ void ScoreKeeperMAX2::HandleTapRowScore( TapNoteScore scoreOfLastTap, int iNumTa
 	// Update dance points.
 	if( !m_pPlayerStageStats->bFailed )
 		m_pPlayerStageStats->iActualDancePoints += TapNoteScoreToDancePoints( scoreOfLastTap );
-	m_pPlayerStageStats->iCurPossibleDancePoints += TapNoteScoreToDancePoints( TNS_RIDICULOUS );
+	m_pPlayerStageStats->iCurPossibleDancePoints += TapNoteScoreToDancePoints( MAX_TAP_NOTE_SCORE );
 	// update judged row totals
 	m_pPlayerStageStats->iTapNoteScores[scoreOfLastTap] += 1;
 
 	// increment the current total possible dance score
 
-	m_pPlayerStageStats->iCurPossibleDancePoints += TapNoteScoreToDancePoints( TNS_RIDICULOUS );
+	m_pPlayerStageStats->iCurPossibleDancePoints += TapNoteScoreToDancePoints( MAX_TAP_NOTE_SCORE );
 
 	//
 	// Regular combo
@@ -428,7 +428,7 @@ void ScoreKeeperMAX2::HandleHoldScore( HoldNoteScore holdScore, TapNoteScore tap
 	m_pPlayerStageStats->iCurPossibleDancePoints += HoldNoteScoreToDancePoints( HNS_OK );
 
 	if( holdScore == HNS_OK )
-		AddScore( TNS_RIDICULOUS );
+		AddScore( MAX_TAP_NOTE_SCORE );
 	else if ( holdScore == HNS_NG )
 		AddScore( TNS_GOOD ); // required for subtractive score display to work properly
 
