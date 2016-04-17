@@ -1,6 +1,5 @@
 #include "global.h"
 #include "Judgment.h"
-#include "ThemeMetric.h"
 #include "GameState.h"
 
 static ThemeMetric<apActorCommands>	RIDICULOUS_COMMAND		("Judgment","RidiculousCommand");
@@ -11,6 +10,7 @@ static ThemeMetric<apActorCommands>	GOOD_COMMAND			("Judgment","GoodCommand");
 static ThemeMetric<apActorCommands>	BOO_COMMAND			("Judgment","BooCommand");
 static ThemeMetric<apActorCommands>	MISS_COMMAND			("Judgment","MissCommand");
 
+static ThemeMetric<apActorCommands>	RIDICULOUS_ODD_COMMAND		("Judgment","RidiculousOddCommand");
 static ThemeMetric<apActorCommands>	MARVELOUS_ODD_COMMAND		("Judgment","MarvelousOddCommand");
 static ThemeMetric<apActorCommands>	PERFECT_ODD_COMMAND		("Judgment","PerfectOddCommand");
 static ThemeMetric<apActorCommands>	GREAT_ODD_COMMAND		("Judgment","GreatOddCommand");
@@ -18,6 +18,7 @@ static ThemeMetric<apActorCommands>	GOOD_ODD_COMMAND		("Judgment","GoodOddComman
 static ThemeMetric<apActorCommands>	BOO_ODD_COMMAND			("Judgment","BooOddCommand");
 static ThemeMetric<apActorCommands>	MISS_ODD_COMMAND		("Judgment","MissOddCommand");
 
+static ThemeMetric<apActorCommands>	RIDICULOUS_EVEN_COMMAND		("Judgment","RidiculousEvenCommand");
 static ThemeMetric<apActorCommands>	MARVELOUS_EVEN_COMMAND		("Judgment","MarvelousEvenCommand");
 static ThemeMetric<apActorCommands>	PERFECT_EVEN_COMMAND		("Judgment","PerfectEvenCommand");
 static ThemeMetric<apActorCommands>	GREAT_EVEN_COMMAND		("Judgment","GreatEvenCommand");
@@ -33,77 +34,95 @@ Judgment::Judgment()
 
 void Judgment::Load( bool bBeginner )
 {
-	m_sprJudgment.Load( THEME->GetPathG("Judgment",bBeginner?"BeginnerLabel":"label") );
-	ASSERT( m_sprJudgment.GetNumStates() == 6  ||  m_sprJudgment.GetNumStates() == 12 );
-	m_sprJudgment.StopAnimating();
-	Reset();
-	this->AddChild( &m_sprJudgment );
-}
+	m_sprRidiculousJudgment.Load( THEME->GetPathG("Judgment", "LabelRidiculous") );
 
+	m_sprJudgments.Load( THEME->GetPathG("Judgment",bBeginner?"BeginnerLabel":"label") );
+	ASSERT( m_sprJudgments.GetNumStates() == 6 ||  m_sprJudgments.GetNumStates() == 12 );
+	m_sprJudgments.StopAnimating();
+	Reset();
+	this->AddChild( &m_sprJudgments );
+	this->AddChild( &m_sprRidiculousJudgment );
+}
 
 void Judgment::Reset()
 {
-	m_sprJudgment.FinishTweening();
-	m_sprJudgment.SetXY( 0, 0 );
-	m_sprJudgment.SetEffectNone();
-	m_sprJudgment.SetHidden( true );
+	ResetSprite( m_sprJudgments );
+	ResetSprite( m_sprRidiculousJudgment );
+}
+
+void Judgment::ResetSprite( Sprite& sprite )
+{
+	sprite.FinishTweening();
+	sprite.SetXY( 0, 0 );
+	sprite.SetEffectNone();
+	sprite.SetHidden( true );
 }
 
 void Judgment::SetJudgment( TapNoteScore score, bool bEarly )
 {
-	//LOG->Trace( "Judgment::SetJudgment()" );
-
 	Reset();
 
-	m_sprJudgment.SetHidden( false );
-
-	int iStateMult = (m_sprJudgment.GetNumStates()==14) ? 2 : 1;
+	bool spriteHasEarlyAndLateJudgments = m_sprJudgments.GetNumStates()==12;
+	int iStateMult = ( spriteHasEarlyAndLateJudgments ) ? 2 : 1;
 	int iStateAdd = ( bEarly || ( iStateMult == 1 ) ) ? 0 : 1;
 
 	switch( score )
 	{
 	case TNS_RIDICULOUS:
+	{
+		int state = 0;
+		ShowJudgmentFrame( m_sprRidiculousJudgment, state, RIDICULOUS_COMMAND, RIDICULOUS_ODD_COMMAND, RIDICULOUS_EVEN_COMMAND );
+		break;
+	}
 	case TNS_MARVELOUS:
 	{
-		// HACK: if we're not showing Ridiculous, redirect Marvelous to those commands.
-		const ThemeMetric<apActorCommands>& cmdJudge = (score == TNS_RIDICULOUS) ? RIDICULOUS_COMMAND : MARVELOUS_COMMAND;
-		const ThemeMetric<apActorCommands>& cmdsToRun = GAMESTATE->ShowTapNoteScore(TNS_RIDICULOUS) ? cmdJudge : RIDICULOUS_COMMAND;
-
-		m_sprJudgment.SetState( 0 * iStateMult + iStateAdd );
-		m_sprJudgment.RunCommands( (m_iCount%2) ? MARVELOUS_ODD_COMMAND : MARVELOUS_EVEN_COMMAND );
-		m_sprJudgment.RunCommands( cmdsToRun );
+		int state = 0 * iStateMult + iStateAdd;
+		ShowJudgmentFrame( m_sprJudgments, state, MARVELOUS_COMMAND, MARVELOUS_ODD_COMMAND, MARVELOUS_EVEN_COMMAND );
 		break;
 	}
 	case TNS_PERFECT:
-		m_sprJudgment.SetState( 1 * iStateMult + iStateAdd );
-		m_sprJudgment.RunCommands( (m_iCount%2) ? PERFECT_ODD_COMMAND : PERFECT_EVEN_COMMAND );
-		m_sprJudgment.RunCommands( PERFECT_COMMAND );
+	{
+		int state = 1 * iStateMult + iStateAdd;
+		ShowJudgmentFrame( m_sprJudgments, state, PERFECT_COMMAND, PERFECT_ODD_COMMAND, PERFECT_EVEN_COMMAND );
 		break;
+	}
 	case TNS_GREAT:
-		m_sprJudgment.SetState( 2 * iStateMult + iStateAdd );
-		m_sprJudgment.RunCommands( (m_iCount%2) ? GREAT_ODD_COMMAND : GREAT_EVEN_COMMAND );
-		m_sprJudgment.RunCommands( GREAT_COMMAND );
+	{
+		int state = 2 * iStateMult + iStateAdd;
+		ShowJudgmentFrame( m_sprJudgments, state, GREAT_COMMAND, GREAT_ODD_COMMAND, GREAT_EVEN_COMMAND );
 		break;
+	}
 	case TNS_GOOD:
-		m_sprJudgment.SetState( 3 * iStateMult + iStateAdd );
-		m_sprJudgment.RunCommands( (m_iCount%2) ? GOOD_ODD_COMMAND : GOOD_EVEN_COMMAND );
-		m_sprJudgment.RunCommands( GOOD_COMMAND );
+	{
+		int state = 3 * iStateMult + iStateAdd;
+		ShowJudgmentFrame( m_sprJudgments, state, GOOD_COMMAND, GOOD_ODD_COMMAND, GOOD_EVEN_COMMAND );
 		break;
+	}
 	case TNS_BOO:
-		m_sprJudgment.SetState( 4 * iStateMult + iStateAdd );
-		m_sprJudgment.RunCommands( (m_iCount%2) ? BOO_ODD_COMMAND : BOO_EVEN_COMMAND );
-		m_sprJudgment.RunCommands( BOO_COMMAND );
+	{
+		int state = 4 * iStateMult + iStateAdd;
+		ShowJudgmentFrame( m_sprJudgments, state, BOO_COMMAND, BOO_ODD_COMMAND, BOO_EVEN_COMMAND );
 		break;
+	}
 	case TNS_MISS:
-		m_sprJudgment.SetState( 5 * iStateMult + iStateAdd );
-		m_sprJudgment.RunCommands( (m_iCount%2) ? MISS_ODD_COMMAND : MISS_EVEN_COMMAND );
-		m_sprJudgment.RunCommands( MISS_COMMAND );
+	{
+		int state = 5 * iStateMult + iStateAdd;
+		ShowJudgmentFrame( m_sprJudgments, state, MISS_COMMAND, MISS_ODD_COMMAND, MISS_EVEN_COMMAND );
 		break;
+	}
 	default:
 		ASSERT(0);
 	}
 
 	m_iCount++;
+}
+
+void Judgment::ShowJudgmentFrame( Sprite& judgmentSprite, int state, ThemeMetric<apActorCommands>& cmd, ThemeMetric<apActorCommands>& oddCmd, ThemeMetric<apActorCommands>& evenCmd )
+{
+	judgmentSprite.SetState( state );
+	judgmentSprite.RunCommands( (m_iCount%2) ? oddCmd : evenCmd );
+	judgmentSprite.RunCommands( cmd );
+	judgmentSprite.SetHidden( false );
 }
 
 /*

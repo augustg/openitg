@@ -7,6 +7,7 @@
 #include "ActorFrame.h"
 #include "GameConstantsAndTypes.h"
 #include "BitmapText.h"
+#include "ThemeMetric.h"
 
 
 class Judgment : public ActorFrame
@@ -18,8 +19,13 @@ public:
 	void SetJudgment( TapNoteScore score, bool bEarly );
 
 protected:
-	Sprite		m_sprJudgment;
+	Sprite		m_sprJudgments;
+	Sprite		m_sprRidiculousJudgment;
 	int			m_iCount;
+	
+private:
+	void ResetSprite( Sprite& sprite );
+	void ShowJudgmentFrame( Sprite& judgmentSprite, int state, ThemeMetric<apActorCommands>& cmd, ThemeMetric<apActorCommands>& oddCmd, ThemeMetric<apActorCommands>& evenCmd );
 };
 
 #endif
