@@ -451,7 +451,7 @@ int ScoreKeeperMAX2::GetPossibleDancePoints( const RadarValues& radars )
 	int NumHolds = int(radars[RADAR_NUM_HOLDS]); 
 	int NumRolls = int(radars[RADAR_NUM_ROLLS]); 
 	return 
-		NumTaps*TapNoteScoreToDancePoints(TNS_RIDICULOUS, false)+
+		NumTaps*TapNoteScoreToDancePoints(MAX_TAP_NOTE_SCORE, false)+
 		NumHolds*HoldNoteScoreToDancePoints(HNS_OK, false) +
 		NumRolls*HoldNoteScoreToDancePoints(HNS_OK, false);
 }
@@ -476,7 +476,7 @@ int ScoreKeeperMAX2::GetPossibleGradePoints( const RadarValues& radars )
 	int NumHolds = int(radars[RADAR_NUM_HOLDS]); 
 	int NumRolls = int(radars[RADAR_NUM_ROLLS]); 
 	return 
-		NumTaps*TapNoteScoreToGradePoints(TNS_RIDICULOUS, false)+
+		NumTaps*TapNoteScoreToGradePoints(MAX_TAP_NOTE_SCORE, false)+
 		NumHolds*HoldNoteScoreToGradePoints(HNS_OK, false) +
 		NumRolls*HoldNoteScoreToGradePoints(HNS_OK, false);
 }

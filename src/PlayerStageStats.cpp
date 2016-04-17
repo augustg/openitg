@@ -170,7 +170,7 @@ Grade PlayerStageStats::GetGrade() const
 	{
 		int iTapScoreValue = ScoreKeeperMAX2::TapNoteScoreToGradePoints( tns, bIsBeginner );
 		fActual += iTapNoteScores[tns] * iTapScoreValue;
-		LOG->Trace( "GetGrade actual: %i * %i", iTapNoteScores[tns], iTapScoreValue );
+		LOG->Trace( "GetGrade actual for %s: %i * %i", TapNoteScoreToString(tns).c_str(), iTapNoteScores[tns], iTapScoreValue );
 	}
 
 	FOREACH_HoldNoteScore( hns )
