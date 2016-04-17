@@ -1591,6 +1591,7 @@ void ScreenGameplay::Update( float fDeltaTime )
 					break;
 				case TNS_PERFECT:
 				case TNS_MARVELOUS:
+				case TNS_RIDICULOUS:
 					state = AS2D_GREAT;
 					break;
 				default:

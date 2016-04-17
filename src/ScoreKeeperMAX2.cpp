@@ -513,10 +513,7 @@ int ScoreKeeperMAX2::HoldNoteScoreToGradePoints( HoldNoteScore hns ) const
 
 int ScoreKeeperMAX2::TapNoteScoreToDancePoints( TapNoteScore tns, bool bBeginner )
 {
-	// TNS_MARVELOUS --> TNS_PERFECT, any other restricted window goes to TNS_MARVELOUS
-	// (this assumes that all hidden windows will be higher than MARVELOUS)
-	if( !GAMESTATE->ShowTapNoteScore(tns) )
-		tns = (tns == TNS_MARVELOUS) ? TNS_PERFECT : TNS_MARVELOUS;
+	tns = GAMESTATE->DowngradeTapNoteScoreToMaxUsed( tns );
 
 	/* This is used for Oni percentage displays.  Grading values are currently in
 	 * StageStats::GetGrade. */
@@ -556,9 +553,7 @@ int ScoreKeeperMAX2::HoldNoteScoreToDancePoints( HoldNoteScore hns, bool bBeginn
 
 int ScoreKeeperMAX2::TapNoteScoreToGradePoints( TapNoteScore tns, bool bBeginner )
 {
-	// this assumes that all hidden windows will be higher than MARVELOUS
-	if( !GAMESTATE->ShowTapNoteScore( tns ) )
-		tns = (tns == TNS_MARVELOUS) ? TNS_PERFECT : TNS_MARVELOUS;
+	tns = GAMESTATE->DowngradeTapNoteScoreToMaxUsed( tns );
 
 	/* This is used for Oni percentage displays.  Grading values are currently in
 	 * StageStats::GetGrade. */

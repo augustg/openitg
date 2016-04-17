@@ -1083,11 +1083,7 @@ void Player::HandleStep( int col, const RageTimer &tm, bool bHeld )
 		if( m_pPlayerState->m_PlayerController == PC_HUMAN && score >= TNS_GREAT ) 
 			HandleAutosync( fNoteOffset );
 
-		// Do game-specific and mode-specific score mapping, moving down judgments if needed.
-		score = GAMESTATE->GetCurrentGame()->MapTapNoteScore( score );
-
-		if( !GAMESTATE->ShowTapNoteScore(score) )
-			score = (score == TNS_MARVELOUS) ? TNS_PERFECT : TNS_MARVELOUS;
+		score = GAMESTATE->DowngradeTapNoteScoreToMaxUsed( score );
 
 		bool bSteppedEarly = -fNoteOffset < 0;
 		if( IsPlayingBeginner() && PREFSMAN->m_bMercifulBeginner && score==TNS_BOO && bSteppedEarly )

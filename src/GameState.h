@@ -105,6 +105,8 @@ public:
 
 	/* determines whether to use Marvelous/Ridiculous, but can theoretically be used for any window */
 	bool ShowTapNoteScore( TapNoteScore tns ) const;
+	
+	TapNoteScore DowngradeTapNoteScoreToMaxUsed( TapNoteScore tns ) const;
 
 	CString			m_sLoadingMessage;	// used in loading screen
 	CString			m_sPreferredSongGroup;	// GROUP_ALL_MUSIC denotes no preferred group

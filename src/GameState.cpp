@@ -1406,6 +1406,23 @@ bool GameState::ShowTapNoteScore( TapNoteScore tns ) const
 	}
 }
 
+TapNoteScore GameState::DowngradeTapNoteScoreToMaxUsed( TapNoteScore tns ) const
+{
+	TapNoteScore score = tns;
+
+	// Do game-specific and mode-specific score mapping, moving down judgments if needed.
+	score = this->m_pCurGame->MapTapNoteScore( score );
+	
+	int tnsValue = static_cast<int>(score);
+
+	while( !GAMESTATE->ShowTapNoteScore( score ) )
+	{
+		tnsValue--;
+		score = static_cast<TapNoteScore>(tnsValue);
+	}
+	return score;
+}
+
 void GameState::GetCharacters( vector<Character*> &apCharactersOut )
 {
 	for( unsigned i=0; i<m_pCharacters.size(); i++ )

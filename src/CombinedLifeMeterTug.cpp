@@ -46,6 +46,7 @@ void CombinedLifeMeterTug::ChangeLife( PlayerNumber pn, TapNoteScore score )
 	float fPercentToMove = 0;
 	switch( score )
 	{
+	case TNS_RIDICULOUS:	fPercentToMove = PREFSMAN->m_fTugMeterPercentChangeRidiculous;	break;
 	case TNS_MARVELOUS:		fPercentToMove = PREFSMAN->m_fTugMeterPercentChangeMarvelous;	break;
 	case TNS_PERFECT:		fPercentToMove = PREFSMAN->m_fTugMeterPercentChangePerfect;	break;
 	case TNS_GREAT:			fPercentToMove = PREFSMAN->m_fTugMeterPercentChangeGreat;		break;
