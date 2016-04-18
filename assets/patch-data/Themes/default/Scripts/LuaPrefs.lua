@@ -193,6 +193,13 @@ function GiveUpTimeRow()
 	return CreateOptionRow( Params, Names, Load, Save )
 end
 
+function UseRidiculousTimingRow()
+	local Names = { "OFF", "MARATHON ONLY", "ALWAYS" }
+	local Values = { 0, 1, 2 }
+	local Params = { Name = "RidiculousTiming" }
+	return CreatePrefsRow( Params, Names, Values, "RidiculousTiming" )
+end
+
 local function deprecated( name )
 	Debug( name .. "Options() is deprecated. Use " .. name .. "Row() instead." )
 end
