@@ -53,3 +53,15 @@ function CompareScores()
 
 	return "1"
 end
+
+function IsRidiculousTimingEnabled()
+	local ridiculousTimingWindow = PREFSMAN:GetPreference('RidiculousTiming')
+	
+	if (ridiculousTimingWindow == 0) then
+		return false
+	elseif (ridiculousTimingWindow == 1) then
+		return GAMESTATE:IsCourseMode() == 1
+	elseif (ridiculousTimingWindow == 2) then
+		return true
+	end
+end

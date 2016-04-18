@@ -600,14 +600,14 @@ void ScreenEvaluation::Init()
 			this->AddChild( &m_sprWin[p] );
 		}
 	}
-	
+
 	//
 	// init judgment area
 	//
 	for( int l=0; l<NUM_JUDGE_LINES; l++ ) 
 	{
 		// XXX: this is voodoo. Should clean it up later.
-		if( !GAMESTATE->ShowTapNoteScore( TapNoteScore(TNS_RIDICULOUS-l) ) )
+		if( !GAMESTATE->ShowTapNoteScore( TapNoteScore(MAX_TAP_NOTE_SCORE-l) ) )
 			continue;	// skip
 
 		if( SHOW_JUDGMENT(l) )
