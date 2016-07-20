@@ -162,9 +162,8 @@ public:
 		// initializing the display.
 		if( MESSAGEMAN )
 		{
-			lua_pushstring(L, "MESSAGEMAN");
 			MESSAGEMAN->PushSelf( L );
-			lua_settable(L, LUA_GLOBALSINDEX);
+			lua_setglobal(L, "MESSAGEMAN");
 		}
 	}
 };

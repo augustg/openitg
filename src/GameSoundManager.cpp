@@ -674,9 +674,8 @@ public:
 		// initializing the display.
 		if( SOUND )
 		{
-			lua_pushstring(L, "SOUND");
 			SOUND->PushSelf( L );
-			lua_settable(L, LUA_GLOBALSINDEX);
+			lua_setglobal( L, "SOUND" );
 		}
 	}
 };

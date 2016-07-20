@@ -317,9 +317,8 @@ public:
 		// initializing the display.
 		if( NOTESKIN )
 		{
-			lua_pushstring(L, "NOTESKIN");
 			NOTESKIN->PushSelf( L );
-			lua_settable(L, LUA_GLOBALSINDEX);
+			lua_setglobal(L, "NOTESKIN");
 		}
 	}
 };

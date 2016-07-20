@@ -2191,9 +2191,8 @@ public:
 		// initializing the display.
 		if( GAMESTATE )
 		{
-			lua_pushstring(L, "GAMESTATE");
 			GAMESTATE->PushSelf( L );
-			lua_settable(L, LUA_GLOBALSINDEX);
+			lua_setglobal(L, "GAMESTATE");
 		}
 	}
 };

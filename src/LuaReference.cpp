@@ -161,8 +161,7 @@ CString LuaData::Serialize() const
 {
 	/* Call Serialize(t), where t is our referenced object. */
 	Lua *L = LUA->Get();
-	lua_pushstring( L, "Serialize" );
-	lua_gettable( L, LUA_GLOBALSINDEX );
+	lua_getglobal( L, "Serialize" );
 
 	ASSERT_M( !lua_isnil(L, -1), "Serialize() missing" );
 	ASSERT_M( lua_isfunction(L, -1), "Serialize() not a function" );

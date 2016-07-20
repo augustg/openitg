@@ -685,9 +685,8 @@ public:
 		// initializing the display.
 		if( SCREENMAN )
 		{
-			lua_pushstring(L, "SCREENMAN");
 			SCREENMAN->PushSelf( L );
-			lua_settable(L, LUA_GLOBALSINDEX);
+			lua_setglobal(L, "SCREENMAN");
 		}
 	}
 };

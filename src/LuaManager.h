@@ -118,7 +118,7 @@ namespace LuaHelpers
 	{
 		luaL_checktype( L, -1, LUA_TTABLE );
 
-		unsigned iCount = luaL_getn( L, -1 );
+		unsigned iCount = 10; //luaL_getn( L, -1 );
 
 		for( unsigned i = 0; i < iCount; ++i )
 		{

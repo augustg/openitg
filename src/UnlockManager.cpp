@@ -542,9 +542,8 @@ public:
 		// initializing the display.
 		if( UNLOCKMAN )
 		{
-			lua_pushstring(L, "UNLOCKMAN");
 			UNLOCKMAN->PushSelf( L );
-			lua_settable(L, LUA_GLOBALSINDEX);
+			lua_setglobal(L, "UNLOCKMAN");
 		}
 	}
 };

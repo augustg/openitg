@@ -305,9 +305,8 @@ public:
 		// initializing the display.
 		if( STATSMAN )
 		{
-			lua_pushstring(L, "STATSMAN");
 			STATSMAN->PushSelf( L );
-			lua_settable(L, LUA_GLOBALSINDEX);
+			lua_setglobal(L, "STATSMAN");
 		}
 	}
 };

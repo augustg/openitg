@@ -251,9 +251,8 @@ MemoryCardManager::MemoryCardManager()
 	// Register with Lua.
 	{
 		Lua *L = LUA->Get();
-		lua_pushstring( L, "MEMCARDMAN" );
 		this->PushSelf( L );
-		lua_settable( L, LUA_GLOBALSINDEX );
+		lua_setglobal( L, "MEMCARDMAN" );
 		LUA->Release( L );
 	}
 

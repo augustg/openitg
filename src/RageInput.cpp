@@ -79,9 +79,8 @@ public:
 		// initializing the display.
 		if( INPUTMAN )
 		{
-			lua_pushstring(L, "INPUTMAN");
 			INPUTMAN->PushSelf( L );
-			lua_settable(L, LUA_GLOBALSINDEX);
+			lua_setglobal(L, "INPUTMAN");
 		}
 	}
 };
