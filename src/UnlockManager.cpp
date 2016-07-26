@@ -175,6 +175,7 @@ static float GetArcadePoints( const Profile *pProfile )
 	{
 		switch(g)
 		{
+		case GRADE_TIER00:
 		case GRADE_TIER01:
 		case GRADE_TIER02:	fAP += 9 * pProfile->m_iNumStagesPassedByGrade[g]; break;
 		default:			fAP += 1 * pProfile->m_iNumStagesPassedByGrade[g]; break;
@@ -210,6 +211,7 @@ static float GetSongPoints( const Profile *pProfile )
 	{
 		switch( g )
 		{
+		case GRADE_TIER00:/*AAAAA*/	fSP += 30 * pProfile->m_iNumStagesPassedByGrade[g];	break;
 		case GRADE_TIER01:/*AAAA*/	fSP += 20 * pProfile->m_iNumStagesPassedByGrade[g];	break;
 		case GRADE_TIER02:/*AAA*/	fSP += 10* pProfile->m_iNumStagesPassedByGrade[g];	break;
 		case GRADE_TIER03:/*AA*/	fSP += 5* pProfile->m_iNumStagesPassedByGrade[g];	break;

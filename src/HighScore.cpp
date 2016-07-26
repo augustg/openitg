@@ -98,7 +98,7 @@ void HighScore::LoadFromNode( const XNode* pNode )
 	pNode->GetChildValue( "LifeRemainingSeconds",		fLifeRemainingSeconds );
 
 	/* Validate input. */
-	grade = clamp( grade, GRADE_TIER01, GRADE_FAILED );
+	grade = clamp( grade, GRADE_TIER00, GRADE_FAILED );
 }
 
 CString HighScore::GetDisplayName() const

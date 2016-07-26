@@ -5,9 +5,10 @@
 
 #include "RageUtil.h"
 
-#define NUM_GRADE_TIERS 20
+#define NUM_GRADE_TIERS 21
 enum Grade 
 { 
+	GRADE_TIER00,	// = AAAAA
 	GRADE_TIER01,	// = AAAA
 	GRADE_TIER02,	// = AAA
 	GRADE_TIER03,	// = AA
@@ -43,7 +44,7 @@ static inline CString GradeToString( Grade g )
         case GRADE_NO_DATA:     return "NoData";
         case GRADE_FAILED:      return "Failed";
         default:
-                return ssprintf("Tier%02d",g+1);
+                return ssprintf("Tier%02d",g);
         }
 }
 

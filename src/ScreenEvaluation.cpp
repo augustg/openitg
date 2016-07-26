@@ -851,6 +851,7 @@ void ScreenEvaluation::Init()
 
 	switch( best_grade )
 	{
+	case GRADE_TIER00:
 	case GRADE_TIER01:
 	case GRADE_TIER02:	
 	case GRADE_TIER03:	

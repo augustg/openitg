@@ -280,7 +280,7 @@ public:
 
 	static int GetWorstGrade( T* p, lua_State *L )
 	{
-		Grade g = GRADE_TIER01;
+		Grade g = GRADE_TIER00;
 		FOREACH_EnabledPlayer( pn )
 			g = max( g, STATSMAN->m_CurStageStats.m_player[pn].GetGrade() );
 		lua_pushnumber( L, g );

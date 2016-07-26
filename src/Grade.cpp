@@ -20,6 +20,7 @@ CString GradeToOldString( Grade g )
 	// string is meant to be human readable
 	switch( g )
 	{
+	case GRADE_TIER00:	return "AAAAA";
 	case GRADE_TIER01:	return "AAAA";
 	case GRADE_TIER02:	return "AAA";
 	case GRADE_TIER03:	return "AA";
@@ -39,7 +40,8 @@ Grade StringToGrade( const CString &sGrade )
 	s.MakeUpper();
 
 	// for backward compatibility
-	if	   ( s == "AAAA" )		return GRADE_TIER01;
+	if	   ( s == "AAAAA" )		return GRADE_TIER00;
+	else if( s == "AAAA" )		return GRADE_TIER01;
 	else if( s == "AAA" )		return GRADE_TIER02;
 	else if( s == "AA" )		return GRADE_TIER03;
 	else if( s == "A" )			return GRADE_TIER04;
@@ -56,7 +58,7 @@ Grade StringToGrade( const CString &sGrade )
 
 	int iTier;
 	if( sscanf(sGrade.c_str(),"Tier%02d",&iTier) == 1 )
-		return (Grade)(iTier-1);
+		return (Grade)iTier;
 
 	LOG->Warn( "Invalid grade: %s", sGrade.c_str() );
 	return GRADE_NO_DATA;

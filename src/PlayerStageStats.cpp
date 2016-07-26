@@ -11,6 +11,7 @@
 
 #define GRADE_PERCENT_TIER(i)			THEME->GetMetricF("PlayerStageStats",ssprintf("GradePercent%s",GradeToString((Grade)i).c_str()))
 #define GRADE_TIER02_IS_ALL_PERFECTS	THEME->GetMetricB("PlayerStageStats","GradeTier02IsAllPerfects")
+#define GRADE_TIER00_IS_ALL_RIDICULOUS	THEME->GetMetricB("PlayerStageStats","GradeTier00IsAllRidiculous")
 
 void PlayerStageStats::Init()
 {
@@ -186,6 +187,22 @@ Grade PlayerStageStats::GetGrade() const
 	float fPercent = (iPossibleGradePoints == 0) ? 0 : fActual / iPossibleGradePoints;
 
 	Grade grade = GetGradeFromPercent( fPercent );
+
+	if( GRADE_TIER00_IS_ALL_RIDICULOUS )
+	{
+		if(	iTapNoteScores[TNS_RIDICULOUS] > 0 &&
+			iTapNoteScores[TNS_MARVELOUS] == 0 &&
+			iTapNoteScores[TNS_PERFECT] == 0 &&
+			iTapNoteScores[TNS_GREAT] == 0 &&
+			iTapNoteScores[TNS_GOOD] == 0 &&
+			iTapNoteScores[TNS_BOO] == 0 &&
+			iTapNoteScores[TNS_MISS] == 0 &&
+			iTapNoteScores[TNS_HIT_MINE] == 0 &&
+			iHoldNoteScores[HNS_NG] == 0 )
+			return GRADE_TIER00;
+
+		return max( grade, GRADE_TIER01 );
+	}
 
 	LOG->Trace( "GetGrade: Grade: %s, %i", GradeToString(grade).c_str(), GRADE_TIER02_IS_ALL_PERFECTS );
 	if( GRADE_TIER02_IS_ALL_PERFECTS )
