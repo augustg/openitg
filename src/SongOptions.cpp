@@ -40,9 +40,10 @@ CString SongOptions::GetString() const
 
 	switch( m_FailType )
 	{
-	case FAIL_IMMEDIATE:											break;
-	case FAIL_END_OF_SONG:			sReturn	+= "FailEndOfSong, ";	break;
-	case FAIL_OFF:					sReturn	+= "FailOff, ";			break;
+	case FAIL_IMMEDIATE:												break;
+	case FAIL_AFTER_30_MISSES:		sReturn	+= "FailAfter30Misses, ";	break;
+	case FAIL_END_OF_SONG:			sReturn	+= "FailEndOfSong, ";		break;
+	case FAIL_OFF:					sReturn	+= "FailOff, ";				break;
 	default:	ASSERT(0);
 	}
 
@@ -117,6 +118,7 @@ void SongOptions::FromString( CString sOptions )
 		else if( sBit == "normal-drain" )	m_DrainType = DRAIN_NORMAL;
 		else if( sBit == "failarcade" || 
 				 sBit == "failimmediate" )	m_FailType = FAIL_IMMEDIATE;
+		else if( sBit == "failafter30misses" )	m_FailType = FAIL_AFTER_30_MISSES;
 		else if( sBit == "failendofsong" )	m_FailType = FAIL_END_OF_SONG;
 		else if( sBit == "failoff" )		m_FailType = FAIL_OFF;
 		

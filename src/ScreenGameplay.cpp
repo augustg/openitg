@@ -1518,21 +1518,29 @@ void ScreenGameplay::Update( float fDeltaTime )
 		FOREACH_EnabledPlayer( pn )
 		{
 			SongOptions::FailType ft = GAMESTATE->GetPlayerFailType(pn);
-			switch( ft )
+
+			if( ft == SongOptions::FAIL_IMMEDIATE )
 			{
-			case SongOptions::FAIL_IMMEDIATE:
 				if( GAMESTATE->m_pPlayerState[pn]->m_HealthState < PlayerState::DEAD )
 					bAllFailed = false;
-				break;
-			case SongOptions::FAIL_END_OF_SONG:
-				bAllFailed = false;	// wait until the end of the song to fail.
-				break;
-			case SongOptions::FAIL_OFF:
-				bAllFailed = false;	// never fail.
-				break;
-			default:
-				ASSERT(0);
 			}
+			else if( ft == SongOptions::FAIL_END_OF_SONG )
+			{
+				bAllFailed = false;	// wait until the end of the song to fail.
+			}
+			else if( ft == SongOptions::FAIL_AFTER_30_MISSES || FAIL_AFTER_30_MISSES )
+			{
+				if( GAMESTATE->AllHumanHaveComboOf30OrMoreMisses() )
+					STATSMAN->m_CurStageStats.m_player[pn].bFailed = GAMESTATE->AllHumanHaveComboOf30OrMoreMisses();
+				else
+					bAllFailed = false;
+			}
+			else if( ft == SongOptions::FAIL_OFF )
+			{
+				bAllFailed = false;	// never fail.
+			}
+			else
+				ASSERT(0);
 		}
 		
 		if( bAllFailed )
@@ -1653,14 +1661,13 @@ void ScreenGameplay::Update( float fDeltaTime )
 	// update give up
 	//
 	bool bGiveUpTimerFired = !m_GiveUpTimer.IsZero() && m_GiveUpTimer.Ago() > g_fGiveUpTime.Get();
-	if( bGiveUpTimerFired || (FAIL_AFTER_30_MISSES && GAMESTATE->AllHumanHaveComboOf30OrMoreMisses()) )
+	if( bGiveUpTimerFired )
 	{
 		// Give up
 
 		FOREACH_PlayerNumber( p )
 		{
 			STATSMAN->m_CurStageStats.m_player[p].bGaveUp = true;
-			STATSMAN->m_CurStageStats.m_player[p].bFailed |= GAMESTATE->AllHumanHaveComboOf30OrMoreMisses();
 		}
 
 		m_GiveUpTimer.SetZero();
