@@ -36,6 +36,6 @@ int find_cipher(const char *name)
 }
 
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/misc/crypt/crypt_find_cipher.c,v $ */
+/* $Revision: 1.7 $ */
+/* $Date: 2006/12/28 01:27:24 $ */

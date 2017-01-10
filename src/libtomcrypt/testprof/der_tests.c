@@ -848,6 +848,6 @@ tmp_time.off_hh);
 
 #endif
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/testprof/der_tests.c,v $ */
+/* $Revision: 1.50 $ */
+/* $Date: 2007/05/12 14:20:27 $ */

@@ -589,6 +589,6 @@ int blowfish_keysize(int *keysize)
 #endif
 
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/ciphers/blowfish.c,v $ */
+/* $Revision: 1.14 $ */
+/* $Date: 2007/05/12 14:20:27 $ */

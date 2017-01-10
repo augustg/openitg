@@ -886,6 +886,6 @@ int cipher_is_valid(int idx);
 
 LTC_MUTEX_PROTO(ltc_cipher_mutex)
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/headers/tomcrypt_cipher.h,v $ */
+/* $Revision: 1.54 $ */
+/* $Date: 2007/05/12 14:37:41 $ */

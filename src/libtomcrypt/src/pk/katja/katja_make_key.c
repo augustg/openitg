@@ -96,6 +96,6 @@ done:
 
 #endif
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/pk/katja/katja_make_key.c,v $ */
+/* $Revision: 1.11 $ */
+/* $Date: 2006/12/28 01:27:24 $ */

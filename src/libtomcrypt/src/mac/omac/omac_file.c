@@ -78,6 +78,6 @@ int omac_file(int cipher,
 
 #endif
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/mac/omac/omac_file.c,v $ */
+/* $Revision: 1.7 $ */
+/* $Date: 2007/05/12 14:37:41 $ */

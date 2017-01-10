@@ -1434,6 +1434,6 @@ void time_encmacs(void)
    time_encmacs_(32);
 }
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/testprof/x86_prof.c,v $ */
+/* $Revision: 1.58 $ */
+/* $Date: 2007/05/12 14:37:41 $ */

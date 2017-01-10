@@ -84,6 +84,6 @@ int omac_process(omac_state *omac, const unsigned char *in, unsigned long inlen)
 #endif
 
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/mac/omac/omac_process.c,v $ */
+/* $Revision: 1.13 $ */
+/* $Date: 2007/05/12 14:37:41 $ */

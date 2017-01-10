@@ -14,7 +14,6 @@
     Twofish tables, Tom St Denis
  */
 #ifdef LTC_TWOFISH_TABLES
-#include "tomcrypt_macros.h"
 
 /* pre generated 8x8 tables from the four 4x4s */
 static const unsigned char SBOX[2][256] = {
@@ -492,6 +491,6 @@ static const ulong32 rs_tab7[256] = {
 
 #endif
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/ciphers/twofish/twofish_tab.c,v $ */
+/* $Revision: 1.6 $ */
+/* $Date: 2007/05/12 14:32:35 $ */

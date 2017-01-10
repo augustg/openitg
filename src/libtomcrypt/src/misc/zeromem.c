@@ -29,6 +29,6 @@ void zeromem(void *out, size_t outlen)
    }
 }
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/misc/zeromem.c,v $ */
+/* $Revision: 1.7 $ */
+/* $Date: 2006/12/28 01:27:24 $ */

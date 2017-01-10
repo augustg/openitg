@@ -166,7 +166,7 @@ done:
    return err;
 }
 #endif
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/pk/ecc/ecc_import.c,v $ */
+/* $Revision: 1.13 $ */
+/* $Date: 2007/05/12 14:32:35 $ */
 

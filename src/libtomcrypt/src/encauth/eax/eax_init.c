@@ -139,6 +139,6 @@ LBL_ERR:
 
 #endif 
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/encauth/eax/eax_init.c,v $ */
+/* $Revision: 1.8 $ */
+/* $Date: 2007/05/12 14:37:41 $ */

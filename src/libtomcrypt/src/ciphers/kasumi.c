@@ -313,6 +313,6 @@ int kasumi_test(void)
 
 #endif
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/ciphers/kasumi.c,v $ */
+/* $Revision: 1.8 $ */
+/* $Date: 2006/12/28 01:27:23 $ */

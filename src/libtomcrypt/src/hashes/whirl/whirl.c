@@ -309,6 +309,6 @@ int  whirlpool_test(void)
 #endif
 
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/hashes/whirl/whirl.c,v $ */
+/* $Revision: 1.10 $ */
+/* $Date: 2007/05/12 14:21:44 $ */

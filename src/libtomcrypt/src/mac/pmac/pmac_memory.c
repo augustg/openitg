@@ -69,6 +69,6 @@ LBL_ERR:
 
 #endif
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/mac/pmac/pmac_memory.c,v $ */
+/* $Revision: 1.6 $ */
+/* $Date: 2006/12/28 01:27:23 $ */

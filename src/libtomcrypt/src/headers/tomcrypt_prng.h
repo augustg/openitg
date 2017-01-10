@@ -1,9 +1,5 @@
 /* ---- PRNG Stuff ---- */
 #ifdef LTC_YARROW
-#ifndef LTC_CTR_MODE
-	#error Yarrow requires LTC_CTR_MODE
-#endif
-
 struct yarrow_prng {
     int                   cipher, hash;
     unsigned char         pool[MAXBLOCKSIZE];
@@ -198,6 +194,6 @@ unsigned long rng_get_bytes(unsigned char *out,
 int rng_make_prng(int bits, int wprng, prng_state *prng, void (*callback)(void));
 
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/headers/tomcrypt_prng.h,v $ */
+/* $Revision: 1.9 $ */
+/* $Date: 2007/05/12 14:32:35 $ */

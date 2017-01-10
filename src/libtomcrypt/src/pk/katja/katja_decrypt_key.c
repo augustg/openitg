@@ -100,6 +100,6 @@ int katja_decrypt_key(const unsigned char *in,       unsigned long  inlen,
 
 
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/pk/katja/katja_decrypt_key.c,v $ */
+/* $Revision: 1.6 $ */
+/* $Date: 2007/05/12 14:32:35 $ */

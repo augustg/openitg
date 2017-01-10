@@ -74,6 +74,6 @@ int lrw_setiv(const unsigned char *IV, unsigned long len, symmetric_LRW *lrw)
 
 
 #endif
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/modes/lrw/lrw_setiv.c,v $ */
+/* $Revision: 1.13 $ */
+/* $Date: 2006/12/28 01:27:24 $ */

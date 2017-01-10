@@ -28,7 +28,7 @@ void xts_done(symmetric_xts *xts)
 
 #endif
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/modes/xts/xts_done.c,v $ */
+/* $Revision: 1.4 $ */
+/* $Date: 2007/03/10 23:59:09 $ */
 

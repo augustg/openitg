@@ -14,9 +14,9 @@
   Tables for LTC_SAFER block ciphers
 */ 
  
+#include "tomcrypt.h"
 
 #if defined(LTC_SAFERP) || defined(LTC_SAFER)
-#include "tomcrypt.h"
 
 /* This is the box defined by ebox[x] = 45^x mod 257.  
  * Its assumed that the value "256" corresponds to zero. */
@@ -63,6 +63,6 @@ const unsigned char safer_lbox[256] = {
 
 
 
-/* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Source: /cvs/libtom/libtomcrypt/src/ciphers/safer/safer_tab.c,v $ */
+/* $Revision: 1.6 $ */
+/* $Date: 2007/05/12 14:20:27 $ */
