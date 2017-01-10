@@ -166,5 +166,5 @@ LBL_ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: v0.42.0 $ */
+/* $Date: 2010-07-15 13:49:00 +0000 $ */

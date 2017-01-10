@@ -36,5 +36,5 @@ int mp_shrink (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: v0.42.0 $ */
+/* $Date: 2010-06-02 15:09:36 +0200 $ */

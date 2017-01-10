@@ -86,5 +86,5 @@ int s_mp_mul_digs (mp_int * a, mp_int * b, mp_int * c, int digs)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */

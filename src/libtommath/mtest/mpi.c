@@ -3981,5 +3981,5 @@ int      s_mp_outlen(int bits, int r)
 /* crc==4242132123, version==2, Sat Feb 02 06:43:52 2002 */
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.36 $ */
+/* $Date: 2005-08-01 16:37:28 +0000 $ */

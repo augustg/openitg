@@ -44,8 +44,8 @@ char *mp_error_to_string(int code)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_error.c */
 
@@ -196,8 +196,8 @@ LBL_ERR:mp_clear_multi (&x, &y, &u, &v, &B, &D, NULL);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_fast_mp_invmod.c */
 
@@ -372,8 +372,8 @@ int fast_mp_montgomery_reduce (mp_int * x, mp_int * n, mp_digit rho)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_fast_mp_montgomery_reduce.c */
 
@@ -483,8 +483,8 @@ int fast_s_mp_mul_digs (mp_int * a, mp_int * b, mp_int * c, int digs)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_fast_s_mp_mul_digs.c */
 
@@ -585,8 +585,8 @@ int fast_s_mp_mul_high_digs (mp_int * a, mp_int * b, mp_int * c, int digs)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_fast_s_mp_mul_high_digs.c */
 
@@ -703,8 +703,8 @@ int fast_s_mp_sqr (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_fast_s_mp_sqr.c */
 
@@ -755,8 +755,8 @@ mp_2expt (mp_int * a, int b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_2expt.c */
 
@@ -802,8 +802,8 @@ mp_abs (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_abs.c */
 
@@ -859,8 +859,8 @@ int mp_add (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_add.c */
 
@@ -975,8 +975,8 @@ mp_add_d (mp_int * a, mp_digit b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_add_d.c */
 
@@ -1020,8 +1020,8 @@ mp_addmod (mp_int * a, mp_int * b, mp_int * c, mp_int * d)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_addmod.c */
 
@@ -1081,8 +1081,8 @@ mp_and (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_and.c */
 
@@ -1129,8 +1129,8 @@ mp_clamp (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_clamp.c */
 
@@ -1177,8 +1177,8 @@ mp_clear (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_clear.c */
 
@@ -1215,8 +1215,8 @@ void mp_clear_multi(mp_int *mp, ...)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_clear_multi.c */
 
@@ -1262,8 +1262,8 @@ mp_cmp (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_cmp.c */
 
@@ -1310,8 +1310,8 @@ int mp_cmp_d(mp_int * a, mp_digit b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_cmp_d.c */
 
@@ -1369,8 +1369,8 @@ int mp_cmp_mag (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_cmp_mag.c */
 
@@ -1426,8 +1426,8 @@ int mp_cnt_lsb(mp_int *a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_cnt_lsb.c */
 
@@ -1498,8 +1498,8 @@ mp_copy (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_copy.c */
 
@@ -1547,8 +1547,8 @@ mp_count_bits (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_count_bits.c */
 
@@ -1843,8 +1843,8 @@ LBL_Q:mp_clear (&q);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_div.c */
 
@@ -1915,8 +1915,8 @@ int mp_div_2(mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_div_2.c */
 
@@ -2016,8 +2016,8 @@ int mp_div_2d (mp_int * a, int b, mp_int * c, mp_int * d)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_div_2d.c */
 
@@ -2099,8 +2099,8 @@ mp_div_3 (mp_int * a, mp_int *c, mp_digit * d)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_div_3.c */
 
@@ -2218,8 +2218,8 @@ int mp_div_d (mp_int * a, mp_digit b, mp_int * c, mp_digit * d)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_div_d.c */
 
@@ -2265,8 +2265,8 @@ int mp_dr_is_modulus(mp_int *a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_dr_is_modulus.c */
 
@@ -2363,8 +2363,8 @@ top:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_dr_reduce.c */
 
@@ -2399,8 +2399,8 @@ void mp_dr_setup(mp_int *a, mp_digit *d)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_dr_setup.c */
 
@@ -2437,8 +2437,8 @@ mp_exch (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_exch.c */
 
@@ -2498,8 +2498,8 @@ int mp_expt_d (mp_int * a, mp_digit b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_expt_d.c */
 
@@ -2614,8 +2614,8 @@ int mp_exptmod (mp_int * G, mp_int * X, mp_int * P, mp_int * Y)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_exptmod.c */
 
@@ -2939,8 +2939,8 @@ LBL_M:
 
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_exptmod_fast.c */
 
@@ -3025,8 +3025,8 @@ _ERR: mp_clear_multi(&u1, &u2, &u3, &v1, &v2, &v3, &t1, &t2, &t3, &q, &tmp, NULL
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_exteuclid.c */
 
@@ -3096,8 +3096,8 @@ int mp_fread(mp_int *a, int radix, FILE *stream)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_fread.c */
 
@@ -3152,8 +3152,8 @@ int mp_fwrite(mp_int *a, int radix, FILE *stream)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_fwrite.c */
 
@@ -3261,8 +3261,8 @@ LBL_U:mp_clear (&v);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_gcd.c */
 
@@ -3310,8 +3310,8 @@ unsigned long mp_get_int(mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_get_int.c */
 
@@ -3371,8 +3371,8 @@ int mp_grow (mp_int * a, int size)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_grow.c */
 
@@ -3421,8 +3421,8 @@ int mp_init (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_init.c */
 
@@ -3457,8 +3457,8 @@ int mp_init_copy (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_init_copy.c */
 
@@ -3520,8 +3520,8 @@ int mp_init_multi(mp_int *mp, ...)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_init_multi.c */
 
@@ -3556,8 +3556,8 @@ int mp_init_set (mp_int * a, mp_digit b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_init_set.c */
 
@@ -3591,8 +3591,8 @@ int mp_init_set_int (mp_int * a, unsigned long b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_init_set_int.c */
 
@@ -3643,8 +3643,8 @@ int mp_init_size (mp_int * a, int size)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_init_size.c */
 
@@ -3690,8 +3690,8 @@ int mp_invmod (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_invmod.c */
 
@@ -3869,8 +3869,8 @@ LBL_ERR:mp_clear_multi (&x, &y, &u, &v, &A, &B, &C, &D, NULL);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_invmod_slow.c */
 
@@ -3982,8 +3982,8 @@ ERR:mp_clear(&t);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_is_square.c */
 
@@ -4091,8 +4091,8 @@ LBL_A1:mp_clear (&a1);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_jacobi.c */
 
@@ -4262,8 +4262,8 @@ ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_karatsuba_mul.c */
 
@@ -4387,8 +4387,8 @@ ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_karatsuba_sqr.c */
 
@@ -4451,8 +4451,8 @@ LBL_T:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_lcm.c */
 
@@ -4522,8 +4522,8 @@ int mp_lshd (mp_int * a, int b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_lshd.c */
 
@@ -4574,8 +4574,8 @@ mp_mod (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_mod.c */
 
@@ -4633,8 +4633,8 @@ mp_mod_2d (mp_int * a, int b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_mod_2d.c */
 
@@ -4664,8 +4664,8 @@ mp_mod_d (mp_int * a, mp_digit b, mp_digit * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_mod_d.c */
 
@@ -4727,8 +4727,8 @@ int mp_montgomery_calc_normalization (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_montgomery_calc_normalization.c */
 
@@ -4849,8 +4849,8 @@ mp_montgomery_reduce (mp_int * x, mp_int * n, mp_digit rho)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_montgomery_reduce.c */
 
@@ -4912,8 +4912,8 @@ mp_montgomery_setup (mp_int * n, mp_digit * rho)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_montgomery_setup.c */
 
@@ -4982,8 +4982,8 @@ int mp_mul (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_mul.c */
 
@@ -5068,8 +5068,8 @@ int mp_mul_2(mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_mul_2.c */
 
@@ -5157,8 +5157,8 @@ int mp_mul_2d (mp_int * a, int b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_mul_2d.c */
 
@@ -5240,8 +5240,8 @@ mp_mul_d (mp_int * a, mp_digit b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_mul_d.c */
 
@@ -5284,8 +5284,8 @@ int mp_mulmod (mp_int * a, mp_int * b, mp_int * c, mp_int * d)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_mulmod.c */
 
@@ -5420,8 +5420,8 @@ LBL_T1:mp_clear (&t1);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_n_root.c */
 
@@ -5464,8 +5464,8 @@ int mp_neg (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_neg.c */
 
@@ -5518,8 +5518,8 @@ int mp_or (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_or.c */
 
@@ -5584,8 +5584,8 @@ LBL_T:mp_clear (&t);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_prime_fermat.c */
 
@@ -5638,8 +5638,8 @@ int mp_prime_is_divisible (mp_int * a, int *result)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_prime_is_divisible.c */
 
@@ -5725,8 +5725,8 @@ LBL_B:mp_clear (&b);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_prime_is_prime.c */
 
@@ -5832,8 +5832,8 @@ LBL_N1:mp_clear (&n1);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_prime_miller_rabin.c */
 
@@ -6006,8 +6006,8 @@ LBL_ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: v0.42.0 $ */
+/* $Date: 2010-07-15 13:49:00 +0000 $ */
 
 /* End: bn_mp_prime_next_prime.c */
 
@@ -6062,8 +6062,8 @@ int mp_prime_rabin_miller_trials(int size)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_prime_rabin_miller_trials.c */
 
@@ -6191,8 +6191,8 @@ error:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_prime_random_ex.c */
 
@@ -6273,8 +6273,8 @@ int mp_radix_size (mp_int * a, int radix, int *size)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_radix_size.c */
 
@@ -6301,8 +6301,8 @@ const char *mp_s_rmap = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrs
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_radix_smap.c */
 
@@ -6360,8 +6360,8 @@ mp_rand (mp_int * a, int digits)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_rand.c */
 
@@ -6449,8 +6449,8 @@ int mp_read_radix (mp_int * a, const char *str, int radix)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_read_radix.c */
 
@@ -6494,8 +6494,8 @@ int mp_read_signed_bin (mp_int * a, const unsigned char *b, int c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_read_signed_bin.c */
 
@@ -6553,8 +6553,8 @@ int mp_read_unsigned_bin (mp_int * a, const unsigned char *b, int c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_read_unsigned_bin.c */
 
@@ -6657,8 +6657,8 @@ CLEANUP:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_reduce.c */
 
@@ -6722,8 +6722,8 @@ ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_reduce_2k.c */
 
@@ -6788,8 +6788,8 @@ ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_reduce_2k_l.c */
 
@@ -6839,8 +6839,8 @@ int mp_reduce_2k_setup(mp_int *a, mp_digit *d)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_reduce_2k_setup.c */
 
@@ -6887,8 +6887,8 @@ ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_reduce_2k_setup_l.c */
 
@@ -6943,8 +6943,8 @@ int mp_reduce_is_2k(mp_int *a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_reduce_is_2k.c */
 
@@ -6991,8 +6991,8 @@ int mp_reduce_is_2k_l(mp_int *a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_reduce_is_2k_l.c */
 
@@ -7029,8 +7029,8 @@ int mp_reduce_setup (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_reduce_setup.c */
 
@@ -7105,8 +7105,8 @@ void mp_rshd (mp_int * a, int b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_rshd.c */
 
@@ -7138,8 +7138,8 @@ void mp_set (mp_int * a, mp_digit b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_set.c */
 
@@ -7190,8 +7190,8 @@ int mp_set_int (mp_int * a, unsigned long b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_set_int.c */
 
@@ -7234,8 +7234,8 @@ int mp_shrink (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: v0.42.0 $ */
+/* $Date: 2010-06-02 15:09:36 +0200 $ */
 
 /* End: bn_mp_shrink.c */
 
@@ -7265,8 +7265,8 @@ int mp_signed_bin_size (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_signed_bin_size.c */
 
@@ -7327,8 +7327,8 @@ if (a->used >= KARATSUBA_SQR_CUTOFF) {
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_sqr.c */
 
@@ -7372,8 +7372,8 @@ mp_sqrmod (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_sqrmod.c */
 
@@ -7457,8 +7457,8 @@ E2: mp_clear(&t1);
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_sqrt.c */
 
@@ -7520,8 +7520,8 @@ mp_sub (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_sub.c */
 
@@ -7617,8 +7617,8 @@ mp_sub_d (mp_int * a, mp_digit b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_sub_d.c */
 
@@ -7663,8 +7663,8 @@ mp_submod (mp_int * a, mp_int * b, mp_int * c, mp_int * d)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_submod.c */
 
@@ -7700,8 +7700,8 @@ int mp_to_signed_bin (mp_int * a, unsigned char *b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_to_signed_bin.c */
 
@@ -7735,8 +7735,8 @@ int mp_to_signed_bin_n (mp_int * a, unsigned char *b, unsigned long *outlen)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_to_signed_bin_n.c */
 
@@ -7787,8 +7787,8 @@ int mp_to_unsigned_bin (mp_int * a, unsigned char *b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_to_unsigned_bin.c */
 
@@ -7822,8 +7822,8 @@ int mp_to_unsigned_bin_n (mp_int * a, unsigned char *b, unsigned long *outlen)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_to_unsigned_bin_n.c */
 
@@ -8110,8 +8110,8 @@ ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_toom_mul.c */
 
@@ -8340,8 +8340,8 @@ ERR:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_toom_sqr.c */
 
@@ -8419,8 +8419,8 @@ int mp_toradix (mp_int * a, char *str, int radix)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_toradix.c */
 
@@ -8511,8 +8511,8 @@ int mp_toradix_n(mp_int * a, char *str, int radix, int maxlen)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_toradix_n.c */
 
@@ -8543,8 +8543,8 @@ int mp_unsigned_bin_size (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_unsigned_bin_size.c */
 
@@ -8598,8 +8598,8 @@ mp_xor (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_xor.c */
 
@@ -8638,8 +8638,8 @@ void mp_zero (mp_int * a)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_mp_zero.c */
 
@@ -8703,8 +8703,8 @@ const mp_digit ltm_prime_tab[] = {
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_prime_tab.c */
 
@@ -8746,8 +8746,8 @@ bn_reverse (unsigned char *s, int len)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_reverse.c */
 
@@ -8859,8 +8859,8 @@ s_mp_add (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_s_mp_add.c */
 
@@ -9115,8 +9115,8 @@ LBL_M:
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_s_mp_exptmod.c */
 
@@ -9209,8 +9209,8 @@ int s_mp_mul_digs (mp_int * a, mp_int * b, mp_int * c, int digs)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_s_mp_mul_digs.c */
 
@@ -9294,8 +9294,8 @@ s_mp_mul_high_digs (mp_int * a, mp_int * b, mp_int * c, int digs)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_s_mp_mul_high_digs.c */
 
@@ -9382,8 +9382,8 @@ int s_mp_sqr (mp_int * a, mp_int * b)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_s_mp_sqr.c */
 
@@ -9475,8 +9475,8 @@ s_mp_sub (mp_int * a, mp_int * b, mp_int * c)
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bn_s_mp_sub.c */
 
@@ -9515,8 +9515,8 @@ int     KARATSUBA_MUL_CUTOFF = 80,      /* Min. number of digits before Karatsub
 #endif
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.41 $ */
+/* $Date: 2007-04-18 09:58:18 +0000 $ */
 
 /* End: bncore.c */
 

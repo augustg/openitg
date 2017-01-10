@@ -580,5 +580,5 @@ extern const char *mp_s_rmap;
 
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.39 $ */
+/* $Date: 2006-04-06 19:49:59 +0000 $ */

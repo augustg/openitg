@@ -736,5 +736,5 @@ printf("compare no compare!\n"); exit(EXIT_FAILURE); }
 }
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.36 $ */
+/* $Date: 2005-08-01 16:37:28 +0000 $ */

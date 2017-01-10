@@ -227,5 +227,5 @@ const  char  *mp_strerror(mp_err ec);
 #endif /* end _H_MPI_ */
 
 /* $Source$ */
-/* $Revision$ */
-/* $Date$ */
+/* $Revision: 0.36 $ */
+/* $Date: 2005-08-01 16:37:28 +0000 $ */
