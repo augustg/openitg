@@ -13,7 +13,7 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-PKG_NAME="stepmania"
+PKG_NAME="openitg"
 
 AUTOHEADER=autoheader
 ACLOCAL_OPTIONS='-I autoconf/m4/'

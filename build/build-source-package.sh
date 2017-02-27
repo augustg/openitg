@@ -16,7 +16,8 @@ if ! [ -d "$OUTPUT_DIR" ]; then print_usage; fi
 
 pushd .
 
-OPENITG_VERSION="`git describe | sed -r 's/-/+/g'`"
+OPENITG_VERSION="`git describe --abbrev=0`" # 0.9
+# OPENITG_VERSION="`git describe | sed -r 's/-/+/g'`" # 0.9+23+a9f34be
 
 TEMP_WORK_DIR="/tmp/openitg-work-tmp"
 
@@ -30,11 +31,18 @@ cp -r .. $TEMP_WORK_DIR/openitg-$OPENITG_VERSION
 # Enter repository
 cd $TEMP_WORK_DIR/openitg-$OPENITG_VERSION
 
+# .tarball-version
+echo $OPENITG_VERSION > .tarball-version
+REPLACEMENT_REGEX='.*AC_INIT(\[OpenITG\].*'
+sed "s/$REPLACEMENT_REGEX/AC_INIT([OpenITG], [$OPENITG_VERSION])/" configure.ac > configure2.ac
+rm configure.ac
+mv configure2.ac configure.ac
+
 # Clean all changes, added files, and files hidden by .gitignore
 #git clean -dfx
 
 # Remove git files
-#rm -rf .git .gitignore
+rm -rf .git .gitignore
 
 # When a user downloads a source package it should be prepared for running ./configure
 ./autogen.sh
@@ -43,7 +51,9 @@ cd ..
 
 tar -Jcf $TEMP_WORK_DIR/openitg-$OPENITG_VERSION.tar.xz openitg-$OPENITG_VERSION
 
+# Back to build directory
 popd
+
 mv $TEMP_WORK_DIR/openitg-$OPENITG_VERSION.tar.xz $OUTPUT_DIR/
 
 rm -rf $TEMP_WORK_DIR
